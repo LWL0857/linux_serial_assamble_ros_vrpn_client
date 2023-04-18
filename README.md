@@ -21,9 +21,7 @@ crwxrwxrwx 1 root dialout 188, 0 4月 18 16:31 /dev/ttyUSB0`
 lu@lu-INVALID:~$ sudo chmod 777 /dev/ttyUSB0
 ```
 
-`
-
-![image](D:\WorkSpace\vscode_workspace\my_serial\linux_serial_ass_client\image\2023-04-18 16-35-33屏幕截图.png)
+![2023-04-18 16-35-33屏幕截图](image/2023-04-18%2016-35-33%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png)
 
 ### 2.查看自己使用的串口助手是否支持自己定义波特率
 
