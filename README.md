@@ -50,7 +50,11 @@ git clone https://github.com/LWL0857/linux_serial_assamble_ros_vrpn_client.git
 
 ![2023-04-18 10-03-05屏幕截图](image/2023-04-18%2010-03-05%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png)
 
-进入src文件夹，删除CMAKELIST.TXT，打开终端，执行
+进入src文件夹，**删除CMAKELIST.TXT(也就是下图里面和vrpn_client_ros并列的CMakelist.txt)**
+
+![微信截图_20230418183548](image/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230418183548.png)
+
+打开终端，执行
 
 ```
 catkin_init_workspace
