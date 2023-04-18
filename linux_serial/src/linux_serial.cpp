@@ -32,12 +32,13 @@ unsigned char buf[62] = {0}; //
 入口参数：无
 出口参数：
 ********************************************************/
-void openserial(const std::string& serial_name,const std::int32_t& port_baurdrate)
+void openserial(const std::string& serial_name,const std::string& port_baurdrate)
 {
+    int32_t temp = std::stoi(port_baurdrate);
     try
     {
         ser.setPort(serial_name);                              // 设备端口号
-        ser.setBaudrate(port_baurdrate);                                  // 波特率
+        ser.setBaudrate(temp);                                  // 波特率
         serial::Timeout t = serial::Timeout::simpleTimeout(1000); // 这个应该是超时，但是是必须的！！
         ser.setTimeout(t);
         ser.open(); // 打开串口

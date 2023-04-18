@@ -41,7 +41,7 @@ int main(int agrc, char **argv)
     //ros::NodeHandle nh("~");
     std::string subscribe_topic;
     std::string serial_using_name;
-    std::int32_t port_baurdrate;
+    std::string port_baurdrate;
     nh.param<std::string>("serial_subscribe_topic_name", subscribe_topic, "vrpn_client_node/RigidBody/pose");
     nh.param<std::string>("serial_using_name", serial_using_name, "/dev/ttyUSB0");
     nh.param<std::string>("port_baurdrate", port_baurdrate, "115200");
