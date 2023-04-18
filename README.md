@@ -3,13 +3,18 @@
 # 环境依赖：
 
 ubuntu版本20.04 ros1
-ros-melodic-vrpn
+
+ ros-melodic-vrpn
  ros-melodic-serial功能包
- 使用前置步骤：
 
-确认这三个参数，保存在linux_serial/launch/linux_serial.launch中
+##  使用前置步骤：
 
-![2023-04-18 16-34-38屏幕截图](image/2023-04-18%2016-34-38%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png)
+安装ros1
+
+```c++
+sudo apt-get install  ros-melodic-vrpn
+sudo apt-get install   ros-melodic-serial
+```
 
 ###  1.查看使用自己的串口，并赋予权限
 
@@ -53,7 +58,23 @@ catkin_init_workspace
 
 
 
-### 3.进入catkin_ws文件夹，打开终端，输入
+
+
+### 3.更改linux_serial/launch/linux_serial.launch文件
+
+确认这三个参数，保存在linux_serial/launch/linux_serial.launch中
+
+![2023-04-18 16-34-38屏幕截图](image/2023-04-18%2016-34-38%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png)
+
+ serial_subscribe_topic_name是订阅的刚体话题名
+
+serial_using_name是串口名
+
+ port_baurdrate是串口波特率
+
+
+
+### 4.进入catkin_ws文件夹，打开终端，输入
 
 ```
 catkin_make
@@ -63,7 +84,9 @@ catkin_make
 
 
 
-### 4.执行
+### 5.执行
+
+在上面编译的终端中执行下面
 
 ```
 source devel/setup.bash
