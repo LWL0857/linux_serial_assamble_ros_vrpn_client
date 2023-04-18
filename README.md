@@ -1,5 +1,19 @@
 **# linux_serial_assamble_ros_vrpn_client**
 
+# 功能介绍：
+
+包含了vrpn_client_ros和linux_serial功能包，vrpn_client_ros可以实现对动捕广播数据的接收，可以自动创建接收到刚体的名字、需要修改该功能包的launch文件中的server为motive主机ip
+
+linux_serial可以将指定的刚体话题数据通过串口下发
+
+通过
+
+```
+roslaunch vrpn_client_ros sample.launch server:=19
+```
+
+可以实现同时启动两个功能，**即接接收刚体话题数据，并将指定的刚体话题数据通过串口下发**
+
 # 环境依赖：
 
 ubuntu版本20.04 ros1
