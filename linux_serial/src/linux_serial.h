@@ -8,7 +8,7 @@
 #include <nav_msgs/Odometry.h>
 #include <geometry_msgs/Twist.h>
 #include <serial/serial.h>
-extern void openserial(const std::string& serial_name);
+extern void openserial(const std::string& serial_name,const std::int32_t& port_baurdrate);
 extern void serial_callback(const geometry_msgs::PoseStamped::ConstPtr &msg);
 extern void write_pose_and_orientation(double positionX, double positionY, double positionZ,
                                        double orientationX, double orientationY, double orientationZ, double orientationW);
