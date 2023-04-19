@@ -42,16 +42,19 @@ int main(int agrc, char **argv)
     std::string subscribe_topic;
     std::string serial_using_name;
     std::string port_baurdrate;
+    std::string port_baurdrate;
     nh.param<std::string>("serial_subscribe_topic_name", subscribe_topic, "vrpn_client_node/RigidBody/pose");
     nh.param<std::string>("serial_using_name", serial_using_name, "/dev/ttyUSB0");
     nh.param<std::string>("port_baurdrate", port_baurdrate, "115200");
+    nh.param<std::string>("port_hz", port_hz, "60");
     std::cout<<"serial_subscribe_topic_name:    "<<subscribe_topic<<std::endl;
     std::cout<<"serial_using_name:             "<<serial_using_name<<std::endl;
      std::cout<<"port_baurdrate:             "<<port_baurdrate<<std::endl;
+     std::cout<<"port_hz:             "<<port_hz<<std::endl;
     // 创建一个Subscriber，订阅名为chatter的topic，注册回调函数serial_callback
     ros::Subscriber sub = nh.subscribe(subscribe_topic, 1000, serial_callback);
-
-    ros::Rate loop_rate(10);
+    int32_t hz_temp = std::stoi(port_hz);
+    ros::Rate loop_rate(hz_temp);
 
     // 串口初始化
     openserial(serial_using_name,port_baurdrate);
