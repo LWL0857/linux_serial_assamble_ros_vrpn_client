@@ -36,9 +36,9 @@ void serial_callback(const geometry_msgs::PoseStamped::ConstPtr &msg)
 int main(int agrc, char **argv)
 {
     ros::init(agrc, argv, "linux_serial_node");
-    ros::NodeHandle nh;
+    //ros::NodeHandle nh;
     
-    //ros::NodeHandle nh("~");
+    ros::NodeHandle nh("~");
     std::string subscribe_topic;
     std::string serial_using_name;
     std::string port_hz;
