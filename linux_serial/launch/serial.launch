@@ -3,18 +3,25 @@
   #<arg name="serial_using_name" default="/dev/ttyUSB0" />
   #<arg name="port_baurdrate" default="9600" />
   #<arg name="port_hz" default="60" />
-  
   #<param name="serial_subscribe_topic_name" value="$(arg serial_subscribe_topic_name)" />
   #<param name="serial_using_name" value="$(arg serial_using_name)" />
- # <param name="port_baurdrate" value="$(arg port_baurdrate)" />
+ #<param name="port_baurdrate" value="$(arg port_baurdrate)" />
 
-  <node name="natnet_linux_serial" type="linux_serial_node" pkg="linux_serial"  ns="uav_0" output="screen" >
-         <rosparam subst_value="true">
-                serial_subscribe_topic_name: vrpn_client_node/RigidBody002/pose
-                serial_using_name: /dev/ttyUSB0
-                port_baurdrate: 9600
-                port_hz: world:60
+  <node name="linux_serial_usb_0" type="linux_serial_node" pkg="linux_serial"  ns="uav_0" output="screen" >
+    <rosparam subst_value="true">
+      serial_subscribe_topic_name: /talk_0/vrpn_client_node/RigidBody003/pose
+      serial_using_name: /dev/ttyUSB0
+      port_baurdrate: "9600"
+      port_hz: "60"
     </rosparam>
-
   </node>
+<node name="linux_serial_usb_1" type="linux_serial_node" pkg="linux_serial"  ns="uav_1" output="screen" >
+    <rosparam subst_value="true">
+      serial_subscribe_topic_name: /talk_0/vrpn_client_node/RigidBody002/pose
+      serial_using_name: /dev/ttyUSB1
+      port_baurdrate: "9600"
+      port_hz: "60"
+    </rosparam>
+  </node>
+
 </launch>
